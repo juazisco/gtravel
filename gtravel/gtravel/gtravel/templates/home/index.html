@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h2>Upcoming events</h2>
+{% if not user.is_authenticated %}
+<p><a href="/signup/">Sign up</a> to apply to some event</p>
+{% endif %} 
+
+  
+  {% if events.count > 0 %}
+      {% for event in events %}
+          {% if event.upcoming %}
+            <article>
+              <header>
+                <a href="/events/{{ event.id }}">{{ event.event_name }}</a>
+              </header>
+              {{ event.description }}
+              <footer>
+                  <nav>
+                    <ul>                      
+                        {% if user.is_authenticated %}
+                        <li>
+                          <a href="/events/{{ event.id }}/apply">Apply</a>
+                        </li>
+                        {% endif %}                     
+                      <li>Applications deadline: {{ event.applications_deadline|date:"M d, Y" }}</li>
+                    </ul>
+                  </nav>
+
+
+              </footer>
+            </article>
+          {% endif %}
+      {% endfor %}
+  {% else %}
+      <p>No events available</p>
+  {% endif %}
+
+{% endblock %}

@@ -1,0 +1,236 @@
+<div class="row" style="margin :20px;">
+    
+    <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Application Details</h3>
+                </div>
+                <div class="panel-body">
+                    <form class="application form-horizontal" role="form" method="post" action="">
+                      {% csrf_token %}      
+                        <div class="form-group">
+                            <label for="{{form.employment.id_for_label}}" class="control-label col-xs-4">{{ form.employment.label}}</label>
+                            <div class="col-sm-3">
+                              <input type="text" class="form-control input-sm" id="{{ form.employment.id_for_label}}" name="{{form.employment.html_name}}"  value="{{ form.employment.value|default_if_none:'' }}" />          
+                            </div>
+                                {% if form.employment.errors %}   
+                                    {% for error in form.employment.errors %}
+                                        <p  class="text-danger">{{error|escape}}</p>
+                                    {% endfor %}    
+                                {% endif %}
+                        </div>
+                    
+                        <div class="form-group">
+                            
+                            <label for="{{form.gnome_projects.id_for_label}}" class="control-label col-xs-4">{{ form.gnome_projects.label}}</label>
+                            <div class="col-sm-3">
+                                {{ form.gnome_projects}}
+                                </div>
+                                {% if form.gnome_projects.errors %}   
+                                    {% for error in form.gnome_projects.errors %}
+                                        <p  class="text-danger">{{error|escape}}</p>
+                                    {% endfor %}    
+                                {% endif %}
+                            </div>
+                        
+                        <div class="form-group">
+                            <label for="{{form.membership_status.id_for_label}}" class="col-sm-4 control-label">{{ form.membership_status.label}}</label>
+                            <div class="col-sm-3">
+                              {{ form.membership_status}}
+                            </div>
+                                {% if form.membership_status.errors %}   
+                                    {% for error in form.membership_status.errors %}
+                                        <p  class="text-danger">{{error|escape}}</p>
+                                    {% endfor %}    
+                                {% endif %}
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="{{form.roles.id_for_label}}" class="col-sm-4 control-label">{{ form.roles.label}}</label>
+                            <div class="col-sm-3">
+                              <input type="text" class="form-control input-sm" id="{{ form.roles.id_for_label}}" name="{{form.roles.html_name}}"  value="{{ form.roles.value|default_if_none:'' }}" />          
+                            </div>
+                                {% if form.roles.errors %}   
+                                    {% for error in form.roles.errors %}
+                                        <p  class="text-danger">{{error|escape}}</p>
+                                    {% endfor %}    
+                                {% endif %}
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="{{form.date_of_arrival.id_for_label}}" class="col-sm-4 control-label">{{ form.date_of_arrival.label}}</label>
+                            <div class="col-sm-3">
+                              {{ form.date_of_arrival}}
+                            </div>
+                                {% if form.date_of_arrival.errors %}   
+                                    {% for error in form.date_of_arrival.errors %}
+                                        <p  class="text-danger">{{error|escape}}</p>
+                                    {% endfor %}    
+                                {% endif %}
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="{{form.date_of_departure.id_for_label}}" class="col-sm-4 control-label">{{ form.date_of_departure.label}}</label>
+                            <div class="col-sm-3">
+                              <input type="text" class="form-control input-sm" id="{{ form.date_of_departure.id_for_label}}" name="{{form.date_of_departure.html_name}}"  value="{{ form.date_of_departure.value|default_if_none:'' }}" />          
+                            </div>
+                                {% if form.date_of_departure.errors %}   
+                                    {% for error in form.date_of_departure.errors %}
+                                        <p  class="text-danger">{{error|escape}}</p>
+                                    {% endfor %}    
+                                {% endif %}
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="{{form.statement_of_interest.id_for_label}}" class="col-sm-4 control-label">{{ form.statement_of_interest.label}}</label>
+                            <div class="col-sm-3">
+                              <input type="text" class="form-control input-sm" id="{{ form.statement_of_interest.id_for_label}}" name="{{form.statement_of_interest.html_name}}"  value="{{ form.statement_of_interest.value|default_if_none:'' }}" />          
+                            </div>
+                                {% if form.statement_of_interest.errors %}   
+                                    {% for error in form.statement_of_interest.errors %}
+                                        <p  class="text-danger">{{error|escape}}</p>
+                                    {% endfor %}    
+                                {% endif %}
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="{{form.years_using_gnome.id_for_label}}" class="col-sm-4 control-label">{{ form.years_using_gnome.label}}</label>
+                            <div class="col-sm-3">
+                             {{ form.years_using_gnome}}
+                            </div>
+                                {% if form.years_using_gnome.errors %}   
+                                    {% for error in form.years_using_gnome.errors %}
+                                        <p  class="text-danger">{{error|escape}}</p>
+                                    {% endfor %}    
+                                {% endif %}
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="{{form.travel_costse.id_for_label}}" class="col-sm-4 control-label">{{ form.travel_costse.label}}</label>
+                            <div class="col-sm-3">
+                              {{ form.travel_costse}}        
+                            </div>
+                                {% if form.travel_costse.errors %}   
+                                    {% for error in form.travel_costse.errors %}
+                                        <p  class="text-danger">{{error|escape}}</p>
+                                    {% endfor %}    
+                                {% endif %}
+                        </div>
+
+                      <div class="form-group">
+                          <label for="{{form.travel_costs.id_for_label}}" class="control-label col-xs-4">{{ form.travel_costs.label}}</label>
+                            <div class="col-sm-3">
+                                {{ form.travel_costs}}
+                            </div>
+                            {% if form.travel_costs.errors %}   
+                                {% for error in form.travel_costs.errors %}
+                                    <p  class="text-danger">{{error|escape}}</p>
+                                {% endfor %}    
+                            {% endif %}
+                      </div>
+
+                      <div class="form-group">
+                            <label for="{{form.travel_costs_description.id_for_label}}" class="control-label col-xs-4">{{ form.travel_costs_description.label}}</label>
+                            <div class="col-sm-6">
+                                <textarea class="form-control" rows="3" id="{{ form.travel_costs_description.id_for_label}}" name="{{form.travel_costs_description.html_name}}"  value="{{ form.travel_costs_description.value|default_if_none:'' }}"></textarea>
+
+                            </div>
+                            {% if form.travel_costs_description.errors %}   
+                                {% for error in form.travel_costs_description.errors %}
+                                    <p  class="text-danger">{{error|escape}}</p>
+                                {% endfor %}    
+                            {% endif %}
+                      </div>
+
+                      <div class="form-group">
+                          <label for="{{form.lodging_costs.id_for_label}}" class="control-label col-xs-4">{{ form.lodging_costs.label}}</label>
+                            <div class="col-sm-3">
+                                {{ form.lodging_costs}}
+                            </div>
+                            {% if form.lodging_costs.errors %}   
+                                {% for error in form.lodging_costs.errors %}
+                                    <p  class="text-danger">{{error|escape}}</p>
+                                {% endfor %}    
+                            {% endif %}
+                      </div>
+
+                        <div class="form-group">
+                            <label for="{{form.lodging_costs_description.id_for_label}}" class="control-label col-xs-4">{{ form.lodging_costs_description.label}}</label>
+                            <div class="col-sm-6">
+                                <textarea class="form-control" rows="3" id="{{ form.lodging_costs_description.id_for_label}}" name="{{form.lodging_costs_description.html_name}}"  value="{{ form.lodging_costs_description.value|default_if_none:'' }}"></textarea>
+                                
+                            </div>
+                            {% if form.lodging_costs_description.errors %}   
+                                {% for error in form.lodging_costs_description.errors %}
+                                    <p  class="text-danger">{{error|escape}}</p>
+                                {% endfor %}    
+                            {% endif %}
+                        </div>
+                     
+
+                      <div class="form-group">
+                            <label for="{{form.other_costs.id_for_label}}" class="control-label col-xs-4">{{ form.other_costs.label}}</label>
+                            <div class="col-sm-3">
+                                {{ form.other_costs}}
+                                </div>
+                                {% if form.other_costs.errors %}   
+                                    {% for error in form.other_costs.errors %}
+                                        <p  class="text-danger">{{error|escape}}</p>
+                                    {% endfor %}    
+                                {% endif %}
+                            </div>
+                     
+
+                      <div class="form-group">
+                          <label for="{{form.other_costs_description.id_for_label}}" class="control-label col-xs-4">{{ form.other_costs_description.label}}</label>
+                            <div class="col-sm-6">
+                                <textarea class="form-control" rows="3" id="{{ form.other_costs_description.id_for_label}}" name="{{form.other_costs_description.html_name}}"  value="{{ form.other_costs_description.value|default_if_none:'' }}"></textarea>
+                                
+                                </div>
+                                {% if form.other_costs_description.errors %}   
+                                    {% for error in form.other_costs_description.errors %}
+                                        <p  class="text-danger">{{error|escape}}</p>
+                                    {% endfor %}    
+                                {% endif %}
+                            </div>
+
+
+                      <div class="form-group">
+                          <label for="{{form.requested_subsidy_total.id_for_label}}" class="control-label col-xs-4">{{ form.requested_subsidy_total.label}}</label>
+                            <div class="col-sm-3">
+                                {{ form.requested_subsidy_total}}
+                            </div>
+                            {% if form.requested_subsidy_total.errors %}   
+                                {% for error in form.requested_subsidy_total.errors %}
+                                    <p  class="text-danger">{{error|escape}}</p>
+                                {% endfor %}    
+                            {% endif %}
+                        </div>
+                        
+
+               <div class="form-group ">
+                                <label class="control-label col-xs-4">Tipo Pago</label>
+                                <div class="col-sm-6   radio ">
+                                      <label><input type="radio" name="cash" value="cash">
+                                      Cash</label> 
+                                      <label><input type="radio" name="banktransfer" value="banktransfer">
+                                      Bank Transfer</label> 
+                                      <label><input type="radio" name="paypal" value="paypal">
+                                      Paypal</label> 
+                                      <label><input type="radio" name="check" value="check">
+                                      Check</label>
+                                </div>
+                        </div>
+                        
+                    </form>
+                </div>
+                <div class="panel-footer clearfix">
+                      <div class="pull-right  btn-xs">
+                        <a href="/events/{{ event.id }}" class="btn btn-default  btn-sm"> <span class="glyphicon glyphicon-save" aria-hidden="true"></span> Save Application</a>
+                        {% if user.is_authenticated %}
+                        <a href="/events/{{ event.id }}" class="btn btn-default  btn-sm"><span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span> Cancel</a>
+                        {% endif %}
+                    </div>
+            </div>
+            
+
+</div>
